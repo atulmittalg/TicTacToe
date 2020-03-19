@@ -39,4 +39,12 @@ public class TicTacToeGameTest {
         ticTacToeGame.playTurnAt(0,2);
         assertEquals(1, ticTacToeGame.getPlayerAtPosition(0,2));
     }
+
+    @Test(expected = RuntimeException.class)
+    public void shouldReturnRunTimeExceptionAlreadySpaceFilledWhenPlacingTokenAtUsedPosition(){
+        ticTacToeGame.playTurnAt(0,0);
+        ticTacToeGame.playTurnAt(0,1);
+        ticTacToeGame.playTurnAt(0,2);
+        ticTacToeGame.playTurnAt(0,0);
+    }
 }
