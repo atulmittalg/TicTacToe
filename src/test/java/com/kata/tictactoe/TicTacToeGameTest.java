@@ -1,9 +1,9 @@
 package com.kata.tictactoe;
 
-import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class TicTacToeGameTest {
 
@@ -16,6 +16,14 @@ public class TicTacToeGameTest {
     @Test
     public void shouldReturnXForFirstTurnPlayed(){
         TicTacToeGame ticTacToeGame = new TicTacToeGame();
-        assertEquals(1, ticTacToeGame.getPlayerAtPosition());
+        ticTacToeGame.playTurnAt(0,0);
+        assertEquals(1, ticTacToeGame.getPlayerAtPosition(0,0));
+    }
+    @Test
+    public void shouldReturnOWhenSecondTurnPlayed(){
+        TicTacToeGame ticTacToeGame = new TicTacToeGame();
+        ticTacToeGame.playTurnAt(0,0);
+        ticTacToeGame.playTurnAt(0,1);
+        assertEquals(2, ticTacToeGame.getPlayerAtPosition(0,1));
     }
 }
