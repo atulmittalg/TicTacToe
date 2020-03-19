@@ -31,4 +31,12 @@ public class TicTacToeGameTest {
         ticTacToeGame.playTurnAt(0,1);
         assertEquals(2, ticTacToeGame.getPlayerAtPosition(0,1));
     }
+
+    @Test
+    public void shouldReturnXWhenThirdTurnPlayed(){
+        ticTacToeGame.playTurnAt(0,0);
+        ticTacToeGame.playTurnAt(0,1);
+        ticTacToeGame.playTurnAt(0,2);
+        assertEquals(1, ticTacToeGame.getPlayerAtPosition(0,2));
+    }
 }
