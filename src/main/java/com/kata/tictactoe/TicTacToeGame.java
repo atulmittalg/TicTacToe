@@ -14,9 +14,13 @@ public class TicTacToeGame {
     }
 
     public void playTurnAt(final int positionX, final int positionY) {
-        if(gameSet[positionX][positionY] != EMPTY_POSITION){ throw new RuntimeException("Space already filled!");}
+        checkIfPositionIsAlreadyFilled(positionX, positionY);
         gameSet[positionX][positionY] = currentPlayerToken;
         changePlayerForNextTurn();
+    }
+
+    private void checkIfPositionIsAlreadyFilled(int positionX, int positionY) {
+        if(gameSet[positionX][positionY] != EMPTY_POSITION){ throw new RuntimeException("Space already filled!");}
     }
 
     private void changePlayerForNextTurn() {
