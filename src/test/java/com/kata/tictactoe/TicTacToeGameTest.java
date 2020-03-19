@@ -11,7 +11,7 @@ public class TicTacToeGameTest {
     private TicTacToeGame ticTacToeGame;
 
     @Before
-    public void inintializeTicTacToeGameOject(){
+    public void initializeTicTacToeGameOject(){
         ticTacToeGame = new TicTacToeGame();
     }
 
