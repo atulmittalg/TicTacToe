@@ -12,4 +12,10 @@ public class TicTacToeGameTest {
         TicTacToeGame ticTacToeGame = new TicTacToeGame();
         assertNotNull(ticTacToeGame);
     }
+
+    @Test
+    public void shouldReturnXForFirstTurnPlayed(){
+        TicTacToeGame ticTacToeGame = new TicTacToeGame();
+        assertEquals(1, ticTacToeGame.getPlayerAtPosition());
+    }
 }
