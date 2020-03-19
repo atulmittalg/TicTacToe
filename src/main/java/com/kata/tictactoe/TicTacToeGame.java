@@ -14,11 +14,10 @@ public class TicTacToeGame {
 
     public void playTurnAt(final int positionX, final int positionY) {
         gameSet[positionX][positionY] = currentPlayerToken;
-        if(currentPlayerToken == PLAYER_X){
-            currentPlayerToken = PLAYER_O;
-        }
-        else {
-            currentPlayerToken = PLAYER_X;
-        }
+        changePlayerForNextTurn();
+    }
+
+    private void changePlayerForNextTurn() {
+        currentPlayerToken = (currentPlayerToken == PLAYER_X) ? PLAYER_O : PLAYER_X;
     }
 }
